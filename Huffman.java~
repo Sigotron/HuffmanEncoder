@@ -1,0 +1,43 @@
+public class Huffman {
+
+
+    /**
+     * allows use of "nodes" for Huffman classes huffman coding implementation
+     * 
+     * @author Joel Sigo 
+     * @version 03/04/2013
+     */
+    public class HNode implements Comparable<HNode>{
+        // instance variables
+        public int freq;
+        public char c;
+        public HNode left, right;
+        
+        /**
+         * constructor for HNode object
+         * @param frequency represents number of times a character is used in phrase
+         * @param character represents character in phrase
+         * @param leftNode represents HNode attached to left
+         * @param rightNode represents HNode attached to right
+         */
+        HNode(int frequency, char character, HNode leftNode, HNode rightNode) {
+            if (freq <= 0) throw new IllegalArgumentException("freq must be greater than 0");
+            freq = frequency;
+            c = character;
+            left = leftNode;
+            right = rightNode;
+        }
+        
+        public int compareTo(HNode o) {
+            if ( freq == o.freq) return 0;
+            else if ( freq > freq) return 1;
+            else return -1;
+        }
+        
+        //public boolean equals(Object o) {
+        //    if (!(o instanceof HNode)) return false;
+        //    HNode node = (HNode)o;
+        //    return 
+        //}
+    }
+}
